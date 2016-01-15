@@ -1,6 +1,9 @@
+// server.js
 // BASE SETUP
 // ==========================================
 
+
+var User = require('./models/user.js');
 // CALL THE PACKAGES ------------------------
 var express = require('express'); // call express
 var app = express(); // define our app using express
@@ -8,6 +11,9 @@ var bodyParser = require('body-parser'); // get body body-parser
 var morgan = require('morgan');  // get morgan to see requests
 var mongoose = require('mongoose'); // connecting to mongodb
 var port = process.env.PORT || 8080;
+
+// connect to mongodb local
+mongoose.connect('mongodb://localhost:27017/test');
 
 // APP CONFIGURATION
 // use body parser so we can grab information from POST requests
